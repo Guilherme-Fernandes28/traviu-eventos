@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Traviú Eventos</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{background:#000;color:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+#barra{position:fixed;top:0;left:0;height:2px;width:0;background:#f5f5f7;z-index:9}
+header{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto;padding:18px 22px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600}
+.logo span{width:38px;height:38px;border-radius:50%;border:1px dashed #6e6e73;display:grid;place-items:center;font-size:12px;color:#86868b}
+nav{display:flex;gap:26px;font-size:14px;color:#a1a1a6}
+nav a:hover{color:#f5f5f7}
+section{max-width:1100px;margin:auto;padding:110px 22px}
+.topo{text-align:center;padding-top:90px}
+.topo p{color:#a1a1a6;font-size:19px}
+h1{font-size:clamp(44px,8vw,88px);line-height:1.04;letter-spacing:-.02em;font-weight:700;margin:14px 0 22px}
+h2{font-size:clamp(32px,5vw,52px);line-height:1.1;letter-spacing:-.015em;margin-bottom:14px}
+.sub{color:#a1a1a6;font-size:19px;max-width:620px;margin-bottom:48px}
+.btn{display:inline-block;background:#f5f5f7;color:#000;padding:13px 26px;border-radius:999px;font-weight:600;font-size:16px;border:1px solid #f5f5f7;cursor:pointer;font-family:inherit}
+.btn.claro{background:none;color:#f5f5f7;border:1px solid #424245}
+.topo .btn{margin-top:34px}
+.foto{border:1px dashed #424245;border-radius:18px;display:grid;place-items:center;color:#6e6e73;font-size:14px;aspect-ratio:4/3;background:#0d0d0f}
+.foto.grande{aspect-ratio:16/7;margin-top:64px;border-radius:28px}
+.tipos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tipo h3{font-size:24px;margin:20px 0 8px}
+.tipo p{color:#a1a1a6;margin-bottom:18px}
+.galeria{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
+.galeria .foto:first-child{grid-row:span 2;aspect-ratio:auto}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px}
+label{display:grid;gap:8px;font-size:14px;color:#a1a1a6}
+input,select,textarea{background:#1d1d1f;border:1px solid #2d2d30;border-radius:12px;color:#f5f5f7;padding:14px;font:inherit;font-size:16px}
+input:focus,select:focus,textarea:focus{outline:2px solid #f5f5f7;outline-offset:1px}
+.inteiro{grid-column:1/-1}
+.form .btn{justify-self:start}
+#aviso{color:#ff6961;font-size:14px}
+.sobre p{color:#a1a1a6;font-size:19px;max-width:680px}
+.contato{text-align:center}
+.contato .sub{margin:0 auto 34px}
+.botoes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.botoes .btn{min-width:150px}
+footer{text-align:center;color:#6e6e73;font-size:13px;padding:40px 22px calc(40px + env(safe-area-inset-bottom))}
+.revela{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.revela.ver{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.revela{opacity:1;transform:none;transition:none}}
+@media (max-width:760px){
+nav{display:none}
+section{padding:80px 20px}
+.tipos,.form{grid-template-columns:1fr}
+.tipos{gap:48px}
+.galeria{grid-template-columns:1fr 1fr}
+.galeria .foto:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/10}
+.foto.grande{aspect-ratio:4/3}
+.form .btn{justify-self:stretch}
+}
+</style>
+</head>
+<body>
+<div id="barra"></div>
+<header>
+<a href="#" class="logo"><span>logo</span>Traviú Eventos</a>
+<nav><a href="#eventos">Eventos</a><a href="#espaco">O espaço</a><a href="#orcamento">Orçamento</a><a href="#contato">Contato</a></nav>
+</header>
+
+<section class="topo">
+<p>Bem-vindo à Traviú Eventos</p>
+<h1>O espaço para<br>o seu evento.</h1>
+<p>Aniversários, casamentos e eventos de empresa.</p>
+<a href="#orcamento" class="btn">Pedir orçamento</a>
+<div class="foto grande">Foto principal do espaço</div>
+</section>
+
+<section id="eventos" class="revela">
+<h2>Para cada ocasião.</h2>
+<p class="sub">Alugue o espaço para o seu evento.</p>
+<div class="tipos">
+<div class="tipo"><div class="foto">Foto de aniversário</div><h3>Aniversário</h3><p>[Texto sobre aniversários]</p><a class="btn claro" href="#" data-tipo="Aniversário">Pedir orçamento</a></div>
+<div class="tipo"><div class="foto">Foto de casamento</div><h3>Casamento</h3><p>[Texto sobre casamentos]</p><a class="btn claro" href="#" data-tipo="Casamento">Pedir orçamento</a></div>
+<div class="tipo"><div class="foto">Foto de evento de empresa</div><h3>Evento de empresa</h3><p>[Texto sobre eventos de empresa]</p><a class="btn claro" href="#" data-tipo="Evento de empresa">Pedir orçamento</a></div>
+</div>
+</section>
+
+<section id="espaco" class="revela">
+<h2>O espaço.</h2>
+<p class="sub">[Texto sobre o espaço]</p>
+<div class="galeria">
+<div class="foto">Foto do salão</div>
+<div class="foto">Foto</div>
+<div class="foto">Foto</div>
+<div class="foto">Foto</div>
+<div class="foto">Foto</div>
+</div>
+</section>
+
+<section id="orcamento" class="revela">
+<h2>Peça seu orçamento.</h2>
+<p class="sub">Preencha e envie pelo WhatsApp.</p>
+<form class="form" id="form">
+<label>Nome<input id="nome" autocomplete="name"></label>
+<label>Tipo de evento<select id="tipo"><option>Aniversário</option><option>Casamento</option><option>Evento de empresa</option></select></label>
+<label>Data<input id="data" type="date"></label>
+<label>Número de convidados<input id="convidados" type="number" min="1" inputmode="numeric"></label>
+<label class="inteiro">Mensagem (opcional)<textarea id="msg" rows="4"></textarea></label>
+<p id="aviso" class="inteiro" hidden>Preencha nome, data e número de convidados.</p>
+<button class="btn">Enviar pelo WhatsApp</button>
+</form>
+</section>
+
+<section class="sobre revela">
+<h2>Sobre.</h2>
+<p>[Texto sobre a Traviú Eventos]</p>
+</section>
+
+<section id="contato" class="contato revela">
+<h2>Contato.</h2>
+<p class="sub">[Endereço]<br>[Horário de atendimento]</p>
+<div class="botoes"><a class="btn" id="zap" target="_blank">WhatsApp</a><a class="btn claro" href="#" target="_blank">Instagram</a></div>
+</section>
+
+<footer>Traviú Eventos</footer>
+
+<script>
+const numero="5500000000000"
+const zap=t=>"https://wa.me/"+numero+"?text="+encodeURIComponent(t)
+document.getElementById("zap").href=zap("Olá! Quero saber mais sobre a Traviú Eventos.")
+document.querySelectorAll("[data-tipo]").forEach(a=>a.href=zap("Olá! Quero um orçamento para "+a.dataset.tipo.toLowerCase()+" com a Traviú Eventos."))
+document.getElementById("form").onsubmit=e=>{
+e.preventDefault()
+const v=id=>document.getElementById(id).value.trim()
+const ok=v("nome")&&v("data")&&v("convidados")
+document.getElementById("aviso").hidden=ok
+if(!ok)return
+const d=v("data").split("-").reverse().join("/")
+let t="Olá! Quero um orçamento.\nNome: "+v("nome")+"\nEvento: "+v("tipo")+"\nData: "+d+"\nConvidados: "+v("convidados")
+if(v("msg"))t+="\nMensagem: "+v("msg")
+open(zap(t),"_blank")
+}
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("ver")),{threshold:.15})
+document.querySelectorAll(".revela").forEach(s=>io.observe(s))
+onscroll=()=>document.getElementById("barra").style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+"%"
+</script>
+</body>
+</html>
